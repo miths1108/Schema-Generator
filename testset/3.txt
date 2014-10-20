@@ -1,0 +1,18 @@
+Please select SQL dialect: 1: SQL Server, 2: Oralce, 3: MySQL, 4: DB2, 5: PostGRESQL, 6: Teradta, 7: Sybase, default is 2: Oracle
+Selected SQL dialect: dbvoracle
+Tables:
+customer
+lineitem
+orders
+Columns:
+customer.custkey(table determined:true)
+customer.discount(table determined:false)
+customer.extendedprice(table determined:false)
+customer.mktsegment(table determined:false)
+customer.orderdate(table determined:false)
+customer.shipdate(table determined:false)
+customer.shippriority(table determined:false)
+lineitem.orderkey(table determined:true)
+orders.custkey(table determined:true)
+orders.orderkey(table determined:true)
+

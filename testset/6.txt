@@ -1,0 +1,10 @@
+Please select SQL dialect: 1: SQL Server, 2: Oralce, 3: MySQL, 4: DB2, 5: PostGRESQL, 6: Teradta, 7: Sybase, default is 2: Oracle
+Selected SQL dialect: dbvoracle
+Tables:
+lineitem
+Columns:
+lineitem.discount(table determined:true)
+lineitem.extendedprice(table determined:true)
+lineitem.quantity(table determined:true)
+lineitem.shipdate(table determined:true)
+

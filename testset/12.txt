@@ -1,0 +1,14 @@
+Please select SQL dialect: 1: SQL Server, 2: Oralce, 3: MySQL, 4: DB2, 5: PostGRESQL, 6: Teradta, 7: Sybase, default is 2: Oracle
+Selected SQL dialect: dbvoracle
+Tables:
+lineitem
+orders
+Columns:
+lineitem.orderkey(table determined:true)
+orders.commitdate(table determined:false)
+orders.orderkey(table determined:true)
+orders.orderpriority(table determined:false)
+orders.receiptdate(table determined:false)
+orders.shipdate(table determined:false)
+orders.shipmode(table determined:false)
+
