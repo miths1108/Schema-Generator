@@ -1,0 +1,18 @@
+Tables:
+lineitem
+nation
+orders
+supplier
+Columns:
+lineitem.*(table determined:true)
+lineitem.commitdate(table determined:true)
+lineitem.orderkey(table determined:true)
+lineitem.receiptdate(table determined:true)
+lineitem.suppkey(table determined:true)
+nation.name(table determined:true)
+nation.nationkey(table determined:true)
+orders.orderkey(table determined:true)
+supplier.name(table determined:true)
+supplier.nationkey(table determined:true)
+supplier.orderstatus(table determined:false)
+supplier.suppkey(table determined:true)

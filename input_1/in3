@@ -1,0 +1,15 @@
+Tables:
+customer
+lineitem
+orders
+Columns:
+customer.custkey(table determined:true)
+customer.discount(table determined:false)
+customer.extendedprice(table determined:false)
+customer.mktsegment(table determined:false)
+customer.orderdate(table determined:false)
+customer.shipdate(table determined:false)
+customer.shippriority(table determined:false)
+lineitem.orderkey(table determined:true)
+orders.custkey(table determined:true)
+orders.orderkey(table determined:true)

@@ -1,0 +1,25 @@
+Tables:
+lineitem
+nation
+orders
+part
+partsupp
+supplier
+Columns:
+lineitem.orderkey(table determined:true)
+lineitem.partkey(table determined:true)
+lineitem.suppkey(table determined:true)
+nation.name(table determined:true)
+nation.nationkey(table determined:true)
+orders.orderkey(table determined:true)
+part.discount(table determined:false)
+part.extendedprice(table determined:false)
+part.name(table determined:true)
+part.orderdate(table determined:false)
+part.partkey(table determined:true)
+part.quantity(table determined:false)
+part.supplycost(table determined:false)
+partsupp.partkey(table determined:true)
+partsupp.suppkey(table determined:true)
+supplier.nationkey(table determined:true)
+supplier.suppkey(table determined:true)

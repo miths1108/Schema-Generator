@@ -1,0 +1,11 @@
+Tables:
+lineitem
+orders
+Columns:
+lineitem.orderkey(table determined:true)
+orders.commitdate(table determined:false)
+orders.orderkey(table determined:true)
+orders.orderpriority(table determined:false)
+orders.receiptdate(table determined:false)
+orders.shipdate(table determined:false)
+orders.shipmode(table determined:false)

@@ -1,0 +1,14 @@
+Tables:
+customer
+lineitem
+orders
+Columns:
+customer.custkey(table determined:true)
+customer.name(table determined:false)
+customer.orderdate(table determined:false)
+customer.quantity(table determined:false)
+customer.totalprice(table determined:false)
+lineitem.orderkey(table determined:true)
+lineitem.quantity(table determined:true)
+orders.custkey(table determined:true)
+orders.orderkey(table determined:true)

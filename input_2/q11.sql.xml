@@ -1,0 +1,249 @@
+<?xml-stylesheet type="text/xsl" href="tree-view.xsl"?>
+<sqlscript>
+<TStatementList size='1'>
+<TSelectSqlStatement setOperator='0'>
+<TResultColumnList size='2'>
+<TResultColumn>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+partkey</TObjectName>
+</TExpression>
+</TResultColumn>
+<TResultColumn>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='sum' aggregateType='none'>
+<args>
+<TExpressionList size='1'>
+<TExpression type='arithmetic_times_t'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+supplycost</TObjectName>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+availqty</TObjectName>
+</TExpression>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+<TAliasClause>
+value</TAliasClause>
+</TResultColumn>
+</TResultColumnList>
+<TJoinList size='3'>
+<TJoin type='1'>
+<TTable type='objectname'>
+partsupp<TAliasClause>
+ps</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+<TJoin type='1'>
+<TTable type='objectname'>
+supplier<TAliasClause>
+s</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+<TJoin type='1'>
+<TTable type='objectname'>
+nation<TAliasClause>
+n</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+</TJoinList>
+<TWhereClause>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+ps.suppkey</TObjectName>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+s.suppkey</TObjectName>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+s.nationkey</TObjectName>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+n.nationkey</TObjectName>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+n.name</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'GERMANY'</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+</TWhereClause>
+<TGroupBy>
+<TGroupByItemList size='1'>
+<TGroupByItem>
+partkey<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+partkey</TObjectName>
+</TExpression>
+</TGroupByItem>
+</TGroupByItemList>
+<haveing_clause>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+></comparisonOperator>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='sum' aggregateType='none'>
+<args>
+<TExpressionList size='1'>
+<TExpression type='arithmetic_times_t'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+supplycost</TObjectName>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+availqty</TObjectName>
+</TExpression>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+<TExpression type='subquery_t'>
+<TSelectSqlStatement setOperator='0'>
+<TResultColumnList size='1'>
+<TResultColumn>
+<TExpression type='arithmetic_times_t'>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='sum' aggregateType='none'>
+<args>
+<TExpressionList size='1'>
+<TExpression type='arithmetic_times_t'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+supplycost</TObjectName>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+availqty</TObjectName>
+</TExpression>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+0.0001000000</TConstant>
+</TExpression>
+</TExpression>
+</TResultColumn>
+</TResultColumnList>
+<TJoinList size='3'>
+<TJoin type='1'>
+<TTable type='objectname'>
+partsupp<TAliasClause>
+ps</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+<TJoin type='1'>
+<TTable type='objectname'>
+supplier<TAliasClause>
+s</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+<TJoin type='1'>
+<TTable type='objectname'>
+nation<TAliasClause>
+n</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+</TJoinList>
+<TWhereClause>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+ps.suppkey</TObjectName>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+s.suppkey</TObjectName>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+s.nationkey</TObjectName>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+n.nationkey</TObjectName>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+n.name</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'GERMANY'</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+</TWhereClause>
+</TSelectSqlStatement>
+</TExpression>
+</TExpression>
+</haveing_clause>
+</TGroupBy>
+<TOrderBy>
+<TOrderByItemList size='1'>
+<TOrderByItem>
+value desc<TExpression type='simple_object_name_t'>
+<TObjectName type='2'>
+value</TObjectName>
+</TExpression>
+</TOrderByItem>
+</TOrderByItemList>
+</TOrderBy>
+</TSelectSqlStatement>
+</TStatementList>
+</sqlscript>

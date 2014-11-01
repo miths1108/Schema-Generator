@@ -1,0 +1,237 @@
+<?xml-stylesheet type="text/xsl" href="tree-view.xsl"?>
+<sqlscript>
+<TStatementList size='1'>
+<TSelectSqlStatement setOperator='0'>
+<TResultColumnList size='4'>
+<TResultColumn>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+brand</TObjectName>
+</TExpression>
+</TResultColumn>
+<TResultColumn>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+type</TObjectName>
+</TExpression>
+</TResultColumn>
+<TResultColumn>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+size</TObjectName>
+</TExpression>
+</TResultColumn>
+<TResultColumn>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='count' aggregateType='distinct'>
+<args>
+<TExpressionList size='1'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+ps_suppkey</TObjectName>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+<TAliasClause>
+supplier_cnt</TAliasClause>
+</TResultColumn>
+</TResultColumnList>
+<TJoinList size='2'>
+<TJoin type='1'>
+<TTable type='objectname'>
+partsupp<TAliasClause>
+ps</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+<TJoin type='1'>
+<TTable type='objectname'>
+part<TAliasClause>
+p</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+</TJoinList>
+<TWhereClause>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+p.partkey</TObjectName>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+ps.partkey</TObjectName>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+<></comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+brand</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'Brand#45'</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='pattern_matching_t'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+type</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'MEDIUM POLISHED%%'</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='in_t'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+size</TObjectName>
+</TExpression>
+<TExpression type='list_t'>
+<TExpressionList size='8'>
+<TExpression type='simple_constant_t'>
+<TConstant>
+49</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+14</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+23</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+45</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+19</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+3</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+36</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+9</TConstant>
+</TExpression>
+</TExpressionList>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='in_t'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+ps.suppkey</TObjectName>
+</TExpression>
+<TExpression type='subquery_t'>
+<TSelectSqlStatement setOperator='0'>
+<TResultColumnList size='1'>
+<TResultColumn>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+s.suppkey</TObjectName>
+</TExpression>
+</TResultColumn>
+</TResultColumnList>
+<TJoinList size='1'>
+<TJoin type='1'>
+<TTable type='objectname'>
+supplier<TAliasClause>
+s</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+</TJoinList>
+<TWhereClause>
+<TExpression type='pattern_matching_t'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='0'>
+s.comment</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'%Customer%Complaints%'</TConstant>
+</TExpression>
+</TExpression>
+</TWhereClause>
+</TSelectSqlStatement>
+</TExpression>
+</TExpression>
+</TExpression>
+</TWhereClause>
+<TGroupBy>
+<TGroupByItemList size='3'>
+<TGroupByItem>
+brand<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+brand</TObjectName>
+</TExpression>
+</TGroupByItem>
+<TGroupByItem>
+type<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+type</TObjectName>
+</TExpression>
+</TGroupByItem>
+<TGroupByItem>
+size<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+size</TObjectName>
+</TExpression>
+</TGroupByItem>
+</TGroupByItemList>
+</TGroupBy>
+<TOrderBy>
+<TOrderByItemList size='4'>
+<TOrderByItem>
+supplier_cnt desc<TExpression type='simple_object_name_t'>
+<TObjectName type='2'>
+supplier_cnt</TObjectName>
+</TExpression>
+</TOrderByItem>
+<TOrderByItem>
+brand<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+brand</TObjectName>
+</TExpression>
+</TOrderByItem>
+<TOrderByItem>
+type<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+type</TObjectName>
+</TExpression>
+</TOrderByItem>
+<TOrderByItem>
+size<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+size</TObjectName>
+</TExpression>
+</TOrderByItem>
+</TOrderByItemList>
+</TOrderBy>
+</TSelectSqlStatement>
+</TStatementList>
+</sqlscript>

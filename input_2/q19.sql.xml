@@ -1,0 +1,483 @@
+<?xml-stylesheet type="text/xsl" href="tree-view.xsl"?>
+<sqlscript>
+<TStatementList size='1'>
+<TSelectSqlStatement setOperator='0'>
+<TResultColumnList size='1'>
+<TResultColumn>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='sum' aggregateType='none'>
+<args>
+<TExpressionList size='1'>
+<TExpression type='arithmetic_times_t'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+extendedprice</TObjectName>
+</TExpression>
+<TExpression type='parenthesis_t'>
+<TExpression type='arithmetic_minus_t'>
+<TExpression type='simple_constant_t'>
+<TConstant>
+1</TConstant>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+discount</TObjectName>
+</TExpression>
+</TExpression>
+</TExpression>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+<TAliasClause>
+revenue</TAliasClause>
+</TResultColumn>
+</TResultColumnList>
+<TJoinList size='2'>
+<TJoin type='1'>
+<TTable type='objectname'>
+lineitem<TAliasClause>
+l</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+<TJoin type='1'>
+<TTable type='objectname'>
+part<TAliasClause>
+p</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+</TJoinList>
+<TWhereClause>
+<TExpression type='logical_or_t'>
+<TExpression type='logical_or_t'>
+<TExpression type='parenthesis_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+p.partkey</TObjectName>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+l.partkey</TObjectName>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+brand</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'Brand#12'</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='in_t'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+container</TObjectName>
+</TExpression>
+<TExpression type='list_t'>
+<TExpressionList size='4'>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'SM CASE'</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'SM BOX'</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'SM PACK'</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'SM PKG'</TConstant>
+</TExpression>
+</TExpressionList>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+>=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+quantity</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+1</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+<=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+quantity</TObjectName>
+</TExpression>
+<TExpression type='arithmetic_plus_t'>
+<TExpression type='simple_constant_t'>
+<TConstant>
+1</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+10</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='between_t'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+size</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+1</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+5</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='in_t'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+shipmode</TObjectName>
+</TExpression>
+<TExpression type='list_t'>
+<TExpressionList size='2'>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'AIR'</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'AIR REG'</TConstant>
+</TExpression>
+</TExpressionList>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+shipinstruct</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'DELIVER IN PERSON'</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='parenthesis_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+p.partkey</TObjectName>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+l.partkey</TObjectName>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+brand</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'Brand#23'</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='in_t'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+container</TObjectName>
+</TExpression>
+<TExpression type='list_t'>
+<TExpressionList size='4'>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'MED BAG'</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'MED BOX'</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'MED PKG'</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'MED PACK'</TConstant>
+</TExpression>
+</TExpressionList>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+>=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+quantity</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+10</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+<=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+quantity</TObjectName>
+</TExpression>
+<TExpression type='arithmetic_plus_t'>
+<TExpression type='simple_constant_t'>
+<TConstant>
+10</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+10</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='between_t'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+size</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+1</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+10</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='in_t'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+shipmode</TObjectName>
+</TExpression>
+<TExpression type='list_t'>
+<TExpressionList size='2'>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'AIR'</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'AIR REG'</TConstant>
+</TExpression>
+</TExpressionList>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+shipinstruct</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'DELIVER IN PERSON'</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='parenthesis_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+p.partkey</TObjectName>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+l.partkey</TObjectName>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+brand</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'Brand#34'</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='in_t'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+container</TObjectName>
+</TExpression>
+<TExpression type='list_t'>
+<TExpressionList size='4'>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'LG CASE'</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'LG BOX'</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'LG PACK'</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'LG PKG'</TConstant>
+</TExpression>
+</TExpressionList>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+>=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+quantity</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+20</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+<=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+quantity</TObjectName>
+</TExpression>
+<TExpression type='arithmetic_plus_t'>
+<TExpression type='simple_constant_t'>
+<TConstant>
+20</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+10</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='between_t'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+size</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+1</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+15</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='in_t'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+shipmode</TObjectName>
+</TExpression>
+<TExpression type='list_t'>
+<TExpressionList size='2'>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'AIR'</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'AIR REG'</TConstant>
+</TExpression>
+</TExpressionList>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+shipinstruct</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'DELIVER IN PERSON'</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+</TExpression>
+</TExpression>
+</TWhereClause>
+</TSelectSqlStatement>
+</TStatementList>
+</sqlscript>

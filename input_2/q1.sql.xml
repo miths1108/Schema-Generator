@@ -1,0 +1,265 @@
+<?xml-stylesheet type="text/xsl" href="tree-view.xsl"?>
+<sqlscript>
+<TStatementList size='1'>
+<TSelectSqlStatement setOperator='0'>
+<TResultColumnList size='10'>
+<TResultColumn>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+returnflag</TObjectName>
+</TExpression>
+</TResultColumn>
+<TResultColumn>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+linestatus</TObjectName>
+</TExpression>
+</TResultColumn>
+<TResultColumn>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='sum' aggregateType='none'>
+<args>
+<TExpressionList size='1'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+quantity</TObjectName>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+<TAliasClause>
+sum_qty</TAliasClause>
+</TResultColumn>
+<TResultColumn>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='sum' aggregateType='none'>
+<args>
+<TExpressionList size='1'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+extendedprice</TObjectName>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+<TAliasClause>
+sum_base_price</TAliasClause>
+</TResultColumn>
+<TResultColumn>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='sum' aggregateType='none'>
+<args>
+<TExpressionList size='1'>
+<TExpression type='arithmetic_times_t'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+extendedprice</TObjectName>
+</TExpression>
+<TExpression type='parenthesis_t'>
+<TExpression type='arithmetic_minus_t'>
+<TExpression type='simple_constant_t'>
+<TConstant>
+1</TConstant>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+discount</TObjectName>
+</TExpression>
+</TExpression>
+</TExpression>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+<TAliasClause>
+sum_disc_price</TAliasClause>
+</TResultColumn>
+<TResultColumn>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='sum' aggregateType='none'>
+<args>
+<TExpressionList size='1'>
+<TExpression type='arithmetic_times_t'>
+<TExpression type='arithmetic_times_t'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+extendedprice</TObjectName>
+</TExpression>
+<TExpression type='parenthesis_t'>
+<TExpression type='arithmetic_minus_t'>
+<TExpression type='simple_constant_t'>
+<TConstant>
+1</TConstant>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+discount</TObjectName>
+</TExpression>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='parenthesis_t'>
+<TExpression type='arithmetic_plus_t'>
+<TExpression type='simple_constant_t'>
+<TConstant>
+1</TConstant>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+tax</TObjectName>
+</TExpression>
+</TExpression>
+</TExpression>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+<TAliasClause>
+sum_charge</TAliasClause>
+</TResultColumn>
+<TResultColumn>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='avg' aggregateType='none'>
+<args>
+<TExpressionList size='1'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+quantity</TObjectName>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+<TAliasClause>
+avg_qty</TAliasClause>
+</TResultColumn>
+<TResultColumn>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='avg' aggregateType='none'>
+<args>
+<TExpressionList size='1'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+extendedprice</TObjectName>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+<TAliasClause>
+avg_price</TAliasClause>
+</TResultColumn>
+<TResultColumn>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='avg' aggregateType='none'>
+<args>
+<TExpressionList size='1'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+discount</TObjectName>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+<TAliasClause>
+avg_disc</TAliasClause>
+</TResultColumn>
+<TResultColumn>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='count' aggregateType='none'>
+<args>
+<TExpressionList size='1'>
+<TExpression type='simple_source_token_t'>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+<TAliasClause>
+count_order</TAliasClause>
+</TResultColumn>
+</TResultColumnList>
+<TJoinList size='1'>
+<TJoin type='1'>
+<TTable type='objectname'>
+lineitem</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+</TJoinList>
+<TWhereClause>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+<=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+shipdate</TObjectName>
+</TExpression>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='dateadd' aggregateType='none'>
+<args>
+<TExpressionList size='3'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='0'>
+dd</TObjectName>
+</TExpression>
+<TExpression type='unary_minus_t'>
+<TExpression type='simple_constant_t'>
+<TConstant>
+90</TConstant>
+</TExpression>
+</TExpression>
+<TExpression type='function_t'>
+<TFunctionCall type='cast_t' name='cast' aggregateType='none'>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'1998-12-01'</TConstant>
+</TExpression>
+</TFunctionCall>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+</TExpression>
+</TWhereClause>
+<TGroupBy>
+<TGroupByItemList size='2'>
+<TGroupByItem>
+returnflag<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+returnflag</TObjectName>
+</TExpression>
+</TGroupByItem>
+<TGroupByItem>
+linestatus<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+linestatus</TObjectName>
+</TExpression>
+</TGroupByItem>
+</TGroupByItemList>
+</TGroupBy>
+<TOrderBy>
+<TOrderByItemList size='2'>
+<TOrderByItem>
+returnflag<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+returnflag</TObjectName>
+</TExpression>
+</TOrderByItem>
+<TOrderByItem>
+linestatus<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+linestatus</TObjectName>
+</TExpression>
+</TOrderByItem>
+</TOrderByItemList>
+</TOrderBy>
+</TSelectSqlStatement>
+</TStatementList>
+</sqlscript>

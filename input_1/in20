@@ -1,0 +1,23 @@
+Tables:
+lineitem
+nation
+part
+partsupp
+supplier
+Columns:
+lineitem.partkey(table determined:true)
+lineitem.quantity(table determined:true)
+lineitem.shipdate(table determined:true)
+lineitem.suppkey(table determined:true)
+lineitem.yy(table determined:true)
+nation.name(table determined:true)
+nation.nationkey(table determined:true)
+part.name(table determined:true)
+part.partkey(table determined:true)
+partsupp.availqty(table determined:true)
+partsupp.partkey(table determined:true)
+partsupp.suppkey(table determined:true)
+supplier.address(table determined:false)
+supplier.name(table determined:true)
+supplier.nationkey(table determined:true)
+supplier.suppkey(table determined:false)

@@ -1,0 +1,129 @@
+<?xml-stylesheet type="text/xsl" href="tree-view.xsl"?>
+<sqlscript>
+<TStatementList size='1'>
+<TSelectSqlStatement setOperator='0'>
+<TResultColumnList size='1'>
+<TResultColumn>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='sum' aggregateType='none'>
+<args>
+<TExpressionList size='1'>
+<TExpression type='arithmetic_times_t'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+extendedprice</TObjectName>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+discount</TObjectName>
+</TExpression>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+<TAliasClause>
+revenue</TAliasClause>
+</TResultColumn>
+</TResultColumnList>
+<TJoinList size='1'>
+<TJoin type='1'>
+<TTable type='objectname'>
+lineitem</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+</TJoinList>
+<TWhereClause>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+>=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+shipdate</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'1994-01-01'</TConstant>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+<</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+shipdate</TObjectName>
+</TExpression>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='dateadd' aggregateType='none'>
+<args>
+<TExpressionList size='3'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='0'>
+yy</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+1</TConstant>
+</TExpression>
+<TExpression type='function_t'>
+<TFunctionCall type='cast_t' name='cast' aggregateType='none'>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'1994-01-01'</TConstant>
+</TExpression>
+</TFunctionCall>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='between_t'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+discount</TObjectName>
+</TExpression>
+<TExpression type='arithmetic_minus_t'>
+<TExpression type='simple_constant_t'>
+<TConstant>
+0.06</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+0.01</TConstant>
+</TExpression>
+</TExpression>
+<TExpression type='arithmetic_plus_t'>
+<TExpression type='simple_constant_t'>
+<TConstant>
+0.06</TConstant>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+0.01</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+<</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+quantity</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+24</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+</TWhereClause>
+</TSelectSqlStatement>
+</TStatementList>
+</sqlscript>

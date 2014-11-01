@@ -1,0 +1,261 @@
+<?xml-stylesheet type="text/xsl" href="tree-view.xsl"?>
+<sqlscript>
+<TStatementList size='1'>
+<TSelectSqlStatement setOperator='0'>
+<TResultColumnList size='2'>
+<TResultColumn>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+n.name</TObjectName>
+</TExpression>
+</TResultColumn>
+<TResultColumn>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='sum' aggregateType='none'>
+<args>
+<TExpressionList size='1'>
+<TExpression type='arithmetic_times_t'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+extendedprice</TObjectName>
+</TExpression>
+<TExpression type='parenthesis_t'>
+<TExpression type='arithmetic_minus_t'>
+<TExpression type='simple_constant_t'>
+<TConstant>
+1</TConstant>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+discount</TObjectName>
+</TExpression>
+</TExpression>
+</TExpression>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+<TAliasClause>
+revenue</TAliasClause>
+</TResultColumn>
+</TResultColumnList>
+<TJoinList size='6'>
+<TJoin type='1'>
+<TTable type='objectname'>
+customer<TAliasClause>
+c</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+<TJoin type='1'>
+<TTable type='objectname'>
+orders<TAliasClause>
+o</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+<TJoin type='1'>
+<TTable type='objectname'>
+lineitem<TAliasClause>
+l</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+<TJoin type='1'>
+<TTable type='objectname'>
+supplier<TAliasClause>
+s</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+<TJoin type='1'>
+<TTable type='objectname'>
+nation<TAliasClause>
+n</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+<TJoin type='1'>
+<TTable type='objectname'>
+region<TAliasClause>
+r</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+</TJoinList>
+<TWhereClause>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+c.custkey</TObjectName>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+o.custkey</TObjectName>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+l.orderkey</TObjectName>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+o.orderkey</TObjectName>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+l.suppkey</TObjectName>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+s.suppkey</TObjectName>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+c.nationkey</TObjectName>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+s.nationkey</TObjectName>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+s.nationkey</TObjectName>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+n.nationkey</TObjectName>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+n.regionkey</TObjectName>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+r.regionkey</TObjectName>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+r.name</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'ASIA'</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+>=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+orderdate</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'1994-01-01'</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+<</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+orderdate</TObjectName>
+</TExpression>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='dateadd' aggregateType='none'>
+<args>
+<TExpressionList size='3'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='0'>
+YY</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+1</TConstant>
+</TExpression>
+<TExpression type='function_t'>
+<TFunctionCall type='cast_t' name='cast' aggregateType='none'>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'1994-01-01'</TConstant>
+</TExpression>
+</TFunctionCall>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+</TExpression>
+</TExpression>
+</TWhereClause>
+<TGroupBy>
+<TGroupByItemList size='1'>
+<TGroupByItem>
+n.name<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+n.name</TObjectName>
+</TExpression>
+</TGroupByItem>
+</TGroupByItemList>
+</TGroupBy>
+<TOrderBy>
+<TOrderByItemList size='1'>
+<TOrderByItem>
+revenue desc<TExpression type='simple_object_name_t'>
+<TObjectName type='2'>
+revenue</TObjectName>
+</TExpression>
+</TOrderByItem>
+</TOrderByItemList>
+</TOrderBy>
+</TSelectSqlStatement>
+</TStatementList>
+</sqlscript>

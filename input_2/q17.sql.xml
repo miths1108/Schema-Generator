@@ -1,0 +1,151 @@
+<?xml-stylesheet type="text/xsl" href="tree-view.xsl"?>
+<sqlscript>
+<TStatementList size='1'>
+<TSelectSqlStatement setOperator='0'>
+<TResultColumnList size='1'>
+<TResultColumn>
+<TExpression type='arithmetic_divide_t'>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='sum' aggregateType='none'>
+<args>
+<TExpressionList size='1'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+extendedprice</TObjectName>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+7.0</TConstant>
+</TExpression>
+</TExpression>
+<TAliasClause>
+avg_yearly</TAliasClause>
+</TResultColumn>
+</TResultColumnList>
+<TJoinList size='2'>
+<TJoin type='1'>
+<TTable type='objectname'>
+lineitem<TAliasClause>
+l</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+<TJoin type='1'>
+<TTable type='objectname'>
+part<TAliasClause>
+p</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+</TJoinList>
+<TWhereClause>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+p.partkey</TObjectName>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+l.partkey</TObjectName>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+brand</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'Brand#23'</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+container</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'MED BOX'</TConstant>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+<</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+quantity</TObjectName>
+</TExpression>
+<TExpression type='subquery_t'>
+<TSelectSqlStatement setOperator='0'>
+<TResultColumnList size='1'>
+<TResultColumn>
+<TExpression type='arithmetic_times_t'>
+<TExpression type='simple_constant_t'>
+<TConstant>
+0.2</TConstant>
+</TExpression>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='avg' aggregateType='none'>
+<args>
+<TExpressionList size='1'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+quantity</TObjectName>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+</TExpression>
+</TResultColumn>
+</TResultColumnList>
+<TJoinList size='1'>
+<TJoin type='1'>
+<TTable type='objectname'>
+lineitem<TAliasClause>
+l2</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+</TJoinList>
+<TWhereClause>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+l2.partkey</TObjectName>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+p.partkey</TObjectName>
+</TExpression>
+</TExpression>
+</TWhereClause>
+</TSelectSqlStatement>
+</TExpression>
+</TExpression>
+</TExpression>
+</TWhereClause>
+</TSelectSqlStatement>
+</TStatementList>
+</sqlscript>

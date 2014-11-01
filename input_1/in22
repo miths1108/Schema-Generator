@@ -1,0 +1,9 @@
+Tables:
+customer
+orders
+Columns:
+customer.acctbal(table determined:true)
+customer.custkey(table determined:true)
+customer.phone(table determined:true)
+orders.*(table determined:true)
+orders.custkey(table determined:true)

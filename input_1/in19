@@ -1,0 +1,14 @@
+Tables:
+lineitem
+part
+Columns:
+lineitem.brand(table determined:false)
+lineitem.container(table determined:false)
+lineitem.discount(table determined:false)
+lineitem.extendedprice(table determined:false)
+lineitem.partkey(table determined:true)
+lineitem.quantity(table determined:false)
+lineitem.shipinstruct(table determined:false)
+lineitem.shipmode(table determined:false)
+lineitem.size(table determined:false)
+part.partkey(table determined:true)

@@ -1,0 +1,20 @@
+Tables:
+customer
+lineitem
+nation
+orders
+supplier
+Columns:
+customer.custkey(table determined:true)
+customer.nationkey(table determined:true)
+lineitem.orderkey(table determined:true)
+lineitem.suppkey(table determined:true)
+nation.name(table determined:true)
+nation.nationkey(table determined:true)
+orders.custkey(table determined:true)
+orders.orderkey(table determined:true)
+supplier.discount(table determined:false)
+supplier.extendedprice(table determined:false)
+supplier.nationkey(table determined:true)
+supplier.shipdate(table determined:false)
+supplier.suppkey(table determined:true)

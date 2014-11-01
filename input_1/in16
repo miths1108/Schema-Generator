@@ -1,0 +1,13 @@
+Tables:
+part
+partsupp
+supplier
+Columns:
+part.partkey(table determined:true)
+partsupp.brand(table determined:false)
+partsupp.partkey(table determined:true)
+partsupp.ps_suppkey(table determined:false)
+partsupp.size(table determined:false)
+partsupp.suppkey(table determined:true)
+partsupp.type(table determined:false)
+supplier.suppkey(table determined:true)

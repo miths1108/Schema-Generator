@@ -1,0 +1,24 @@
+Tables:
+customer
+lineitem
+nation
+orders
+region
+supplier
+Columns:
+customer.custkey(table determined:true)
+customer.discount(table determined:false)
+customer.extendedprice(table determined:false)
+customer.nationkey(table determined:true)
+customer.orderdate(table determined:false)
+lineitem.orderkey(table determined:true)
+lineitem.suppkey(table determined:true)
+nation.name(table determined:true)
+nation.nationkey(table determined:true)
+nation.regionkey(table determined:true)
+orders.custkey(table determined:true)
+orders.orderkey(table determined:true)
+region.name(table determined:true)
+region.regionkey(table determined:true)
+supplier.nationkey(table determined:true)
+supplier.suppkey(table determined:true)

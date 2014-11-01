@@ -1,0 +1,159 @@
+<?xml-stylesheet type="text/xsl" href="tree-view.xsl"?>
+<sqlscript>
+<TStatementList size='1'>
+<TSelectSqlStatement setOperator='0'>
+<TResultColumnList size='2'>
+<TResultColumn>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+orderpriority</TObjectName>
+</TExpression>
+</TResultColumn>
+<TResultColumn>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='count' aggregateType='none'>
+<args>
+<TExpressionList size='1'>
+<TExpression type='simple_source_token_t'>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+<TAliasClause>
+order_count</TAliasClause>
+</TResultColumn>
+</TResultColumnList>
+<TJoinList size='1'>
+<TJoin type='1'>
+<TTable type='objectname'>
+orders<TAliasClause>
+o</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+</TJoinList>
+<TWhereClause>
+<TExpression type='logical_and_t'>
+<TExpression type='logical_and_t'>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+>=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+orderdate</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'1993-07-01'</TConstant>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+<</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+orderdate</TObjectName>
+</TExpression>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='dateadd' aggregateType='none'>
+<args>
+<TExpressionList size='3'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='0'>
+mm</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+3</TConstant>
+</TExpression>
+<TExpression type='function_t'>
+<TFunctionCall type='cast_t' name='cast' aggregateType='none'>
+<TExpression type='simple_constant_t'>
+<TConstant>
+'1993-07-01'</TConstant>
+</TExpression>
+</TFunctionCall>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+</TExpression>
+</TExpression>
+<TExpression type='exists_t'>
+<TSelectSqlStatement setOperator='0'>
+<TResultColumnList size='1'>
+<TResultColumn>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+*</TObjectName>
+</TExpression>
+</TResultColumn>
+</TResultColumnList>
+<TJoinList size='1'>
+<TJoin type='1'>
+<TTable type='objectname'>
+lineitem<TAliasClause>
+l</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+</TJoinList>
+<TWhereClause>
+<TExpression type='logical_and_t'>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+l.orderkey</TObjectName>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+o.orderkey</TObjectName>
+</TExpression>
+</TExpression>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+<</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+commitdate</TObjectName>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+receiptdate</TObjectName>
+</TExpression>
+</TExpression>
+</TExpression>
+</TWhereClause>
+</TSelectSqlStatement>
+</TExpression>
+</TExpression>
+</TWhereClause>
+<TGroupBy>
+<TGroupByItemList size='1'>
+<TGroupByItem>
+orderpriority<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+orderpriority</TObjectName>
+</TExpression>
+</TGroupByItem>
+</TGroupByItemList>
+</TGroupBy>
+<TOrderBy>
+<TOrderByItemList size='1'>
+<TOrderByItem>
+orderpriority<TExpression type='simple_object_name_t'>
+<TObjectName type='1'>
+orderpriority</TObjectName>
+</TExpression>
+</TOrderByItem>
+</TOrderByItemList>
+</TOrderBy>
+</TSelectSqlStatement>
+</TStatementList>
+</sqlscript>

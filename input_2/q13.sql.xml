@@ -1,0 +1,75 @@
+<?xml-stylesheet type="text/xsl" href="tree-view.xsl"?>
+<sqlscript>
+<TStatementList size='1'>
+<TSelectSqlStatement setOperator='0'>
+<TResultColumnList size='2'>
+<TResultColumn>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='0'>
+c_count</TObjectName>
+</TExpression>
+</TResultColumn>
+<TResultColumn>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='count' aggregateType='none'>
+<args>
+<TExpressionList size='1'>
+<TExpression type='simple_source_token_t'>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+<TAliasClause>
+custdist</TAliasClause>
+</TResultColumn>
+</TResultColumnList>
+<TJoinList size='1'>
+<TJoin type='1'>
+<TTable type='subquery'>
+(
+		select
+			c.custkey,
+			count(orderkey)
+		from
+			customer c left outer join orders o on
+				c.custkey = o.custkey
+				and o.comment not like '%%special%%requests%%'
+		group by
+			c.custkey
+	)<TAliasClause>
+c_orders (c_custkey, c_count)</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+</TJoinList>
+<TGroupBy>
+<TGroupByItemList size='1'>
+<TGroupByItem>
+c_count<TExpression type='simple_object_name_t'>
+<TObjectName type='0'>
+c_count</TObjectName>
+</TExpression>
+</TGroupByItem>
+</TGroupByItemList>
+</TGroupBy>
+<TOrderBy>
+<TOrderByItemList size='2'>
+<TOrderByItem>
+custdist desc<TExpression type='simple_object_name_t'>
+<TObjectName type='2'>
+custdist</TObjectName>
+</TExpression>
+</TOrderByItem>
+<TOrderByItem>
+c_count desc<TExpression type='simple_object_name_t'>
+<TObjectName type='0'>
+c_count</TObjectName>
+</TExpression>
+</TOrderByItem>
+</TOrderByItemList>
+</TOrderBy>
+</TSelectSqlStatement>
+</TStatementList>
+</sqlscript>

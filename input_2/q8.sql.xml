@@ -1,0 +1,126 @@
+<?xml-stylesheet type="text/xsl" href="tree-view.xsl"?>
+<sqlscript>
+<TStatementList size='1'>
+<TSelectSqlStatement setOperator='0'>
+<TResultColumnList size='2'>
+<TResultColumn>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='0'>
+year</TObjectName>
+</TExpression>
+</TResultColumn>
+<TResultColumn>
+<TExpression type='arithmetic_divide_t'>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='sum' aggregateType='none'>
+<args>
+<TExpressionList size='1'>
+<TExpression type='case_t'>
+<TCaseExpression>
+<TWhenClauseItemList size='1'>
+<TWhenClauseItem>
+<TExpression type='simple_comparison_t'>
+<comparisonOperator>
+=</comparisonOperator>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='0'>
+nation</TObjectName>
+</TExpression>
+<TExpression type='simple_constant_t'>
+<TConstant>
+':1'</TConstant>
+</TExpression>
+</TExpression>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='0'>
+volume</TObjectName>
+</TExpression>
+</TWhenClauseItem>
+</TWhenClauseItemList>
+<else_expr>
+<TExpression type='simple_constant_t'>
+<TConstant>
+0</TConstant>
+</TExpression>
+</else_expr>
+</TCaseExpression>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='sum' aggregateType='none'>
+<args>
+<TExpressionList size='1'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='0'>
+volume</TObjectName>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+</TExpression>
+<TAliasClause>
+mkt_share</TAliasClause>
+</TResultColumn>
+</TResultColumnList>
+<TJoinList size='1'>
+<TJoin type='1'>
+<TTable type='subquery'>
+(
+		select
+			extract(year from orderdate) as year,
+			extendedprice * (1 - discount) as volume,
+			n2.name as nation
+		from
+			part p,
+			supplier s,
+			lineitem l,
+			orders o,
+			customer c,
+			nation n1,
+			nation n2,
+			region r
+		where
+			p.partkey = l.partkey
+			and s.suppkey = l.suppkey
+			and l.orderkey = o.orderkey
+			and o.custkey = c.custkey
+			and c.nationkey = n1.nationkey
+			and n1.regionkey = r.regionkey
+			and r.name = 'AMERICA'
+			and s.nationkey = n2.nationkey
+			and orderdate between '1995-01-01' and '1996-12-31'
+			and type = 'ECONOMY ANODIZED STEEL'
+	)<TAliasClause>
+all_nations</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+</TJoinList>
+<TGroupBy>
+<TGroupByItemList size='1'>
+<TGroupByItem>
+year<TExpression type='simple_object_name_t'>
+<TObjectName type='0'>
+year</TObjectName>
+</TExpression>
+</TGroupByItem>
+</TGroupByItemList>
+</TGroupBy>
+<TOrderBy>
+<TOrderByItemList size='1'>
+<TOrderByItem>
+year<TExpression type='simple_object_name_t'>
+<TObjectName type='0'>
+year</TObjectName>
+</TExpression>
+</TOrderByItem>
+</TOrderByItemList>
+</TOrderBy>
+</TSelectSqlStatement>
+</TStatementList>
+</sqlscript>

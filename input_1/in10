@@ -1,0 +1,21 @@
+Tables:
+customer
+lineitem
+nation
+orders
+Columns:
+customer.acctbal(table determined:false)
+customer.address(table determined:false)
+customer.custkey(table determined:true)
+customer.discount(table determined:false)
+customer.extendedprice(table determined:false)
+customer.name(table determined:true)
+customer.nationkey(table determined:true)
+customer.orderdate(table determined:false)
+customer.phone(table determined:false)
+customer.returnflag(table determined:false)
+lineitem.orderkey(table determined:true)
+nation.name(table determined:true)
+nation.nationkey(table determined:true)
+orders.custkey(table determined:true)
+orders.orderkey(table determined:true)

@@ -1,0 +1,13 @@
+Tables:
+nation
+partsupp
+supplier
+Columns:
+nation.name(table determined:true)
+nation.nationkey(table determined:true)
+partsupp.availqty(table determined:false)
+partsupp.partkey(table determined:false)
+partsupp.suppkey(table determined:true)
+partsupp.supplycost(table determined:false)
+supplier.nationkey(table determined:true)
+supplier.suppkey(table determined:true)

@@ -1,0 +1,102 @@
+<?xml-stylesheet type="text/xsl" href="tree-view.xsl"?>
+<sqlscript>
+<TStatementList size='1'>
+<TSelectSqlStatement setOperator='0'>
+<TResultColumnList size='3'>
+<TResultColumn>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='0'>
+cntrycode</TObjectName>
+</TExpression>
+</TResultColumn>
+<TResultColumn>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='count' aggregateType='none'>
+<args>
+<TExpressionList size='1'>
+<TExpression type='simple_source_token_t'>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+<TAliasClause>
+numcust</TAliasClause>
+</TResultColumn>
+<TResultColumn>
+<TExpression type='function_t'>
+<TFunctionCall type='unknown_t' name='sum' aggregateType='none'>
+<args>
+<TExpressionList size='1'>
+<TExpression type='simple_object_name_t'>
+<TObjectName type='0'>
+acctbal</TObjectName>
+</TExpression>
+</TExpressionList>
+</args>
+</TFunctionCall>
+</TExpression>
+<TAliasClause>
+totacctbal</TAliasClause>
+</TResultColumn>
+</TResultColumnList>
+<TJoinList size='1'>
+<TJoin type='1'>
+<TTable type='subquery'>
+(
+		select
+			substring(phone,1,2) as cntrycode,
+			acctbal
+		from
+			customer c
+		where
+			substring(phone,1,2) in
+				('13', '31', '23', '29', '30', '18', '17')
+			and acctbal &#62; (
+				select
+					avg(acctbal)
+				from
+					customer
+				where
+					acctbal &#62; 0.00
+					and substring(phone,1,2) in
+						('13', '31', '23', '29', '30', '18', '17')
+			)
+			and not exists (
+				select
+					*
+				from
+					orders o
+				where
+					o.custkey = c.custkey
+			)
+	)<TAliasClause>
+custsale</TAliasClause>
+</TTable>
+<TJoinItemList size='0'>
+</TJoinItemList>
+</TJoin>
+</TJoinList>
+<TGroupBy>
+<TGroupByItemList size='1'>
+<TGroupByItem>
+cntrycode<TExpression type='simple_object_name_t'>
+<TObjectName type='0'>
+cntrycode</TObjectName>
+</TExpression>
+</TGroupByItem>
+</TGroupByItemList>
+</TGroupBy>
+<TOrderBy>
+<TOrderByItemList size='1'>
+<TOrderByItem>
+cntrycode<TExpression type='simple_object_name_t'>
+<TObjectName type='0'>
+cntrycode</TObjectName>
+</TExpression>
+</TOrderByItem>
+</TOrderByItemList>
+</TOrderBy>
+</TSelectSqlStatement>
+</TStatementList>
+</sqlscript>

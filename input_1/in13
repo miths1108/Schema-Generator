@@ -1,0 +1,7 @@
+Tables:
+customer
+orders
+Columns:
+customer.custkey(table determined:true)
+customer.orderkey(table determined:false)
+orders.custkey(table determined:true)

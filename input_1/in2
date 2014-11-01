@@ -1,0 +1,27 @@
+Tables:
+nation
+part
+partsupp
+region
+supplier
+Columns:
+nation.name(table determined:true)
+nation.nationkey(table determined:true)
+nation.regionkey(table determined:true)
+part.acctbal(table determined:false)
+part.address(table determined:false)
+part.mfgr(table determined:false)
+part.partkey(table determined:true)
+part.phone(table determined:false)
+part.ppartkey(table determined:false)
+part.size(table determined:false)
+part.supplycost(table determined:false)
+part.type(table determined:false)
+partsupp.partkey(table determined:true)
+partsupp.suppkey(table determined:true)
+partsupp.supplycost(table determined:false)
+region.name(table determined:true)
+region.regionkey(table determined:true)
+supplier.name(table determined:true)
+supplier.nationkey(table determined:true)
+supplier.suppkey(table determined:true)
